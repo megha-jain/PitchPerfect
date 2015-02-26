@@ -112,32 +112,55 @@
                                 <state key="normal" image="Slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="62" y="111" width="66" height="66"/>
+                                </variation>
                                 <connections>
                                     <action selector="slowAudio:" destination="XOR-Aj-s62" eventType="touchUpInside" id="mL1-xL-I92"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ciw-im-JY3">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Fast">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="282" y="111" width="66" height="66"/>
+                                </variation>
+                                <connections>
+                                    <action selector="fastAudio:" destination="XOR-Aj-s62" eventType="touchUpInside" id="wim-Ja-Oaz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5lD-4P-sTg" firstAttribute="centerY" secondItem="Ciw-im-JY3" secondAttribute="centerY" id="6Mw-xE-h49"/>
                             <constraint firstItem="5lD-4P-sTg" firstAttribute="top" secondItem="i9o-ql-qKe" secondAttribute="bottom" constant="50" id="BXr-Bp-nS8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ciw-im-JY3" secondAttribute="trailing" constant="40" id="iP4-rA-fHd"/>
                             <constraint firstItem="5lD-4P-sTg" firstAttribute="leading" secondItem="i1s-5P-Nxk" secondAttribute="leadingMargin" constant="50" id="y4X-cp-qMH"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="5lD-4P-sTg"/>
+                                <exclude reference="Ciw-im-JY3"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6Mw-xE-h49"/>
                                 <exclude reference="BXr-Bp-nS8"/>
                                 <exclude reference="y4X-cp-qMH"/>
+                                <exclude reference="iP4-rA-fHd"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="5lD-4P-sTg"/>
+                                <include reference="Ciw-im-JY3"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6Mw-xE-h49"/>
                                 <include reference="BXr-Bp-nS8"/>
                                 <include reference="y4X-cp-qMH"/>
+                                <include reference="iP4-rA-fHd"/>
                             </mask>
                         </variation>
                     </view>
@@ -166,6 +189,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Fast" width="66" height="66"/>
         <image name="Microphone" width="100" height="100"/>
         <image name="Slow" width="66" height="66"/>
         <image name="StopButton" width="50" height="50"/>
