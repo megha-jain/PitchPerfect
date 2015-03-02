@@ -9,7 +9,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -40,7 +40,6 @@
                                 </state>
                                 <connections>
                                     <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="JrS-Dm-uKe"/>
-                                    <segue destination="XOR-Aj-s62" kind="show" id="Bod-Ao-8PT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -89,6 +88,7 @@
                         <outlet property="recordButton" destination="hth-FK-5dH" id="jPO-kz-ajg"/>
                         <outlet property="recordingInProgress" destination="E2D-vc-nIx" id="PFn-jb-U3j"/>
                         <outlet property="stopButton" destination="AoP-1a-psV" id="ADe-F4-guh"/>
+                        <segue destination="XOR-Aj-s62" kind="show" identifier="stopRecording" id="wu3-cE-lsm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -112,9 +112,6 @@
                                 <state key="normal" image="Slow">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="62" y="111" width="66" height="66"/>
-                                </variation>
                                 <connections>
                                     <action selector="slowAudio:" destination="XOR-Aj-s62" eventType="touchUpInside" id="mL1-xL-I92"/>
                                 </connections>
@@ -124,16 +121,24 @@
                                 <state key="normal" image="Fast">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="282" y="111" width="66" height="66"/>
-                                </variation>
                                 <connections>
                                     <action selector="fastAudio:" destination="XOR-Aj-s62" eventType="touchUpInside" id="wim-Ja-Oaz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-Ef-152">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="StopButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAudio:" destination="XOR-Aj-s62" eventType="touchUpInside" id="GTE-2Q-Sin"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eUq-fl-vHo" firstAttribute="top" secondItem="OHF-Ef-152" secondAttribute="bottom" constant="29" id="1ci-0B-2SB"/>
+                            <constraint firstAttribute="centerX" secondItem="OHF-Ef-152" secondAttribute="centerX" constant="-2" id="2EZ-LJ-TI9"/>
                             <constraint firstItem="5lD-4P-sTg" firstAttribute="centerY" secondItem="Ciw-im-JY3" secondAttribute="centerY" id="6Mw-xE-h49"/>
                             <constraint firstItem="5lD-4P-sTg" firstAttribute="top" secondItem="i9o-ql-qKe" secondAttribute="bottom" constant="50" id="BXr-Bp-nS8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ciw-im-JY3" secondAttribute="trailing" constant="40" id="iP4-rA-fHd"/>
@@ -143,24 +148,30 @@
                             <mask key="subviews">
                                 <exclude reference="5lD-4P-sTg"/>
                                 <exclude reference="Ciw-im-JY3"/>
+                                <exclude reference="OHF-Ef-152"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="1ci-0B-2SB"/>
                                 <exclude reference="6Mw-xE-h49"/>
                                 <exclude reference="BXr-Bp-nS8"/>
                                 <exclude reference="y4X-cp-qMH"/>
                                 <exclude reference="iP4-rA-fHd"/>
+                                <exclude reference="2EZ-LJ-TI9"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="5lD-4P-sTg"/>
                                 <include reference="Ciw-im-JY3"/>
+                                <include reference="OHF-Ef-152"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1ci-0B-2SB"/>
                                 <include reference="6Mw-xE-h49"/>
                                 <include reference="BXr-Bp-nS8"/>
                                 <include reference="y4X-cp-qMH"/>
                                 <include reference="iP4-rA-fHd"/>
+                                <include reference="2EZ-LJ-TI9"/>
                             </mask>
                         </variation>
                     </view>
